@@ -18,6 +18,10 @@ public class ProjectileGun : MonoBehaviour
 
     int bulletsLeft, bulletsShot;
 
+    // recoil
+    //public Rigidbody playerRb;
+    //public float recoilForce;
+
     // bools
     bool shooting, readyToShoot, reloading;
 
@@ -117,6 +121,9 @@ public class ProjectileGun : MonoBehaviour
         {
             Invoke("ResetShot", timeBetweenShooting);
             allowInvoke = false;
+
+            // add recoil to player
+            //playerRb.AddForce(-directionWithSpread.normalized * recoilForce, ForceMode.Impulse);
         }
 
         // if more than one bulletsPerTap make sure to repeat shoot function
